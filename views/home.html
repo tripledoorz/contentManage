@@ -1,0 +1,13 @@
+
+<div class="row">
+    <div class="col-md-1 ">
+        <ul  style="list-style: none;  "  >
+            <!-- ng-repeat -->
+            <!-- ng-src 需要使用{{}} -->
+            <!-- <img ng-src="{{}}"> -->
+            <li style="border-bottom:2px solid #b1b1b1" ng-repeat="obj in leftList" ui-sref="{{obj.state}}" ><h4>{{obj.name}}</h4></li>
+        </ul>
+    </div>
+    <div class="col-md-11" ui-view="main"></div>
+</div>
+

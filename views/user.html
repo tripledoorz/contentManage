@@ -1,0 +1,100 @@
+<table class="table table-bordered table-hover text-center" >
+    <thead class="lead">
+    <td>用户Id</td>
+    <td>用户名称</td>
+    <td>用户密码</td>
+    <td>手机</td>
+    <td>年龄</td>
+    <td>邮箱</td>
+    <td>身份证号</td>
+    <td>地址</td>
+    <td>操作</td>
+
+    </thead>
+    <tbody>
+    <tr ng-repeat="info in list">
+        <td>{{info.u_id}}</td>
+        <td>{{info.u_name}}</td>
+        <td>{{info.u_pass}}</td>
+        <td>{{info.u_phone}}</td>
+        <td>{{info.u_age}}</td>
+        <td>{{info.u_email}}</td>
+        <td>{{info.u_identity}}</td>
+        <td>{{info.u_address}}</td>
+
+        <td>
+            <button ng-click="update(info)" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">修改</button>
+            <button ng-click="del(info)" class="btn btn-danger">删除</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">用户信息</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="formGroupInputSmall">用户ID</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" disabled type="text" value="{{userInfoList.u_id}}" id="formGroupInputSmall" placeholder="用户ID">
+                        </div>
+                    </div>
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="formGroupInputSmall">用户名称</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" disabled type="text" id="formGroupInputSmall" value="{{userInfoList.u_name}}" placeholder="用户名称">
+                        </div>
+                    </div>
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="formGroupInputSmall">密码</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" id="formGroupInputSmall" value="{{userInfoList.u_pass}}" placeholder="密码">
+                        </div>
+                    </div>
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="formGroupInputSmall">手机</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" id="formGroupInputSmall" value="{{userInfoList.u_phone}}" placeholder="手机">
+                        </div>
+                    </div>
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="formGroupInputSmall">年龄</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" id="formGroupInputSmall" value="{{userInfoList.u_age}}" placeholder="年龄">
+                        </div>
+                    </div>
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="formGroupInputSmall">邮箱</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" id="formGroupInputSmall" value="{{userInfoList.u_email}}" placeholder="邮箱">
+                        </div>
+                    </div>
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="formGroupInputSmall">身份证</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" id="formGroupInputSmall" value="{{userInfoList.u_identity}}" placeholder="身份证">
+                        </div>
+                    </div>
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label" for="formGroupInputSmall">地址</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" id="formGroupInputSmall" value="{{userInfoList.u_address}}" placeholder="地址">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
